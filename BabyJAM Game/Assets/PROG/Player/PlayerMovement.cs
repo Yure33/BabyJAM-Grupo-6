@@ -5,12 +5,19 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody2D r2d;
     [SerializeField] float[] Velocidade_PadraoCorrida;
+    [SerializeField] Transform PlayerVisual;
     float Velocidade;
     Vector2 direção;
+    Vector2 mousePos;
 
     void Start()
     {
         Velocidade = Velocidade_PadraoCorrida[0];
+    }
+    void Update()
+    {
+        Vector2 LookDirection = (mousePos - (Vector2)transform.position).normalized;
+        PlayerVisual.rotation = Quaternion.Euler(0, 0, -(Mathf.Atan2(LookDirection.x, LookDirection.y)*Mathf.Rad2Deg));
     }
     void FixedUpdate()
     {
@@ -32,5 +39,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Velocidade = Velocidade_PadraoCorrida[0];
         }
+    }
+
+    public void OnLook(InputAction.CallbackContext contexto)
+    {
+        mousePos = Camera.main.ScreenToWorldPoint(contexto.ReadValue<Vector2>());
     }
 }
