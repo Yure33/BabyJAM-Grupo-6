@@ -9,6 +9,7 @@ public class CampoDeVisao : MonoBehaviour
     [SerializeField] float DistanciaFOV;
     [SerializeField] int QntRaios;
     [SerializeField] LayerMask LayerColisão;
+    [SerializeField] LayerMask LayerEnemy;
     [SerializeField] Transform PlayerPos;
     [SerializeField] Color corDoCampo;
     public bool Interagindo;
@@ -77,6 +78,18 @@ public class CampoDeVisao : MonoBehaviour
             else
             {
                 vertices[verticeID] = PlayerPos.position + direcaoVetor;
+            }
+
+            //DETECTAR ESTÁTUA COM OS RAYCASTS
+            if(i%5 == 0)
+            {
+                Debug.Log("Alterei");
+                RaycastHit2D hitEstatua;
+                hitEstatua = Physics2D.Raycast(PlayerPos.position, direcaoVetor, DistanciaFOV, LayerEnemy);
+                if(hitEstatua.collider != null && hitEstatua.transform.gameObject.CompareTag("Enemy"))
+                {
+                    hitEstatua.transform.GetComponent<Enemy_Script>().CanWalk = false;
+                }
             }
 
             if(i > 0)
