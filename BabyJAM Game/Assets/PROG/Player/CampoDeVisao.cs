@@ -11,7 +11,10 @@ public class CampoDeVisao : MonoBehaviour
     [SerializeField] LayerMask LayerColisão;
     [SerializeField] Transform PlayerPos;
     [SerializeField] Color corDoCampo;
-    Vector2 mousePos;
+    public bool Interagindo;
+    Vector2 lookPos;
+    Vector2 walkDirection;
+    bool ControllerOn = false;
     float AnguloLook;
     Mesh mesh;
 
@@ -25,7 +28,27 @@ public class CampoDeVisao : MonoBehaviour
 
     void Update()
     {
-        Vector2 LookDirection = (mousePos - (Vector2)PlayerPos.position).normalized;
+        if (Interagindo)
+        {
+            return;
+        }
+        Vector2 LookDirection;
+        if (!ControllerOn)
+        {
+            lookPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            LookDirection = (lookPos - (Vector2)PlayerPos.position).normalized;
+        }
+        else
+        {
+            if(lookPos != null)
+            {
+                LookDirection = lookPos;
+            }
+            else
+            {
+                LookDirection = walkDirection;
+            }
+        }
         AnguloLook = -(Mathf.Atan2(LookDirection.x, LookDirection.y)*Mathf.Rad2Deg-90);
     }
 
@@ -72,10 +95,27 @@ public class CampoDeVisao : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = UV;
         mesh.triangles = triangulos;
+        mesh.RecalculateBounds();
     }
 
     public void OnLook(InputAction.CallbackContext contexto)
     {
-        mousePos = Camera.main.ScreenToWorldPoint(contexto.ReadValue<Vector2>());
+        if (contexto.control.device is Mouse)
+        {
+            ControllerOn = false;
+        }
+        else
+        {
+            ControllerOn = true;
+            lookPos = contexto.ReadValue<Vector2>();
+        }
+    }
+
+    public void OnWalk(InputAction.CallbackContext contexto)
+    {
+        if (ControllerOn)
+        {
+            walkDirection = contexto.ReadValue<Vector2>();
+        }
     }
 }

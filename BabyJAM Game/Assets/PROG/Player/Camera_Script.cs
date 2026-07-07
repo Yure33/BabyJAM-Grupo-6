@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class Camera_Script : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Transform Player;
+    [SerializeField] float Suavidade;
+    
+    void FixedUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(Player == null)
+        {
+            return;
+        }
+        Vector2 alvo = Vector2.Lerp(transform.position, Player.position, Suavidade);
+        transform.position = new Vector3(alvo.x, alvo.y, -10);
     }
 }
