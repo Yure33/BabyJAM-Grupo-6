@@ -1,0 +1,83 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField] Rigidbody2D r2d;
+    [SerializeField] float[] Velocidade_PadraoCorrida;
+    [SerializeField] Transform PlayerVisual;
+    bool ControllerOn = false;
+    public bool Interagindo;
+    float Velocidade;
+    Vector2 direção;
+    Vector2 lookPos;
+
+    void Start()
+    {
+        Velocidade = Velocidade_PadraoCorrida[0];
+    }
+    void Update()
+    {
+        if (Interagindo)
+        {
+            return;
+        }
+        Vector2 LookDirection;
+
+        if (!ControllerOn)
+        {
+            lookPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            LookDirection = (lookPos - (Vector2)transform.position).normalized;
+        }
+        else
+        {
+            if(lookPos != Vector2.zero)
+            {
+                LookDirection = lookPos.normalized;
+            }
+            else
+            {
+                LookDirection = direção.normalized;
+            }
+        }
+        PlayerVisual.rotation = Quaternion.Euler(0, 0, -(Mathf.Atan2(LookDirection.x, LookDirection.y)*Mathf.Rad2Deg));
+    }
+    void FixedUpdate()
+    {
+        if (Interagindo)
+        {
+            return;
+        }
+        r2d.position += Time.fixedDeltaTime * Velocidade * direção.normalized;
+    }
+
+    public void OnWalk(InputAction.CallbackContext contexto)
+    {
+        direção = contexto.ReadValue<Vector2>();
+    }
+
+    public void OnRun(InputAction.CallbackContext contexto)
+    {
+        if (contexto.performed)
+        {
+            Velocidade = Velocidade_PadraoCorrida[1]; 
+        }
+        else
+        {
+            Velocidade = Velocidade_PadraoCorrida[0];
+        }
+    }
+
+    public void OnLook(InputAction.CallbackContext contexto)
+    {
+        if (contexto.control.device is Mouse)
+        {
+            ControllerOn = false;
+        }
+        else
+        {
+            ControllerOn = true;
+            lookPos = contexto.ReadValue<Vector2>();
+        }
+    }
+}
