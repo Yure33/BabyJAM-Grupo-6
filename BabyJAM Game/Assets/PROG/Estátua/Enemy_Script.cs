@@ -15,6 +15,7 @@ public class Enemy_Script : MonoBehaviour
         path = GetComponent<AIPath>();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(UpdatePersonalizado());
+        path.maxSpeed = Velocidade;
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Enemy_Script : MonoBehaviour
     IEnumerator UpdatePersonalizado()
     {
         path.destination = Player.position;
+        path.SearchPath();
 
         yield return _waitForSeconds0_5;
         CanWalk = true;
