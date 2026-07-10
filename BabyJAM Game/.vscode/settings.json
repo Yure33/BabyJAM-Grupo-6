@@ -67,6 +67,7 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
+    "dotnet.defaultSolution": "BabyJAM Game.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false,
-    "dotnet.defaultSolution": "BabyJAM Game.slnx"
+    "dotnetAcquisitionExtension.existingDotnetPath": []
 }
