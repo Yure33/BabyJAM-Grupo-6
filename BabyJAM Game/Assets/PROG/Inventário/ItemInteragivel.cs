@@ -4,7 +4,7 @@ public class ItemInteragivel : MonoBehaviour
 {
     public int idItem; 
     
-    public string[] textos = new string [] { "This all you remind me!!"}; 
+    public string[] textos;
     
     public bool pegavel; 
 }

@@ -14,11 +14,11 @@ public class Inventario : MonoBehaviour
     void Update()
     {
         // Se apertar E, liga ou desliga a tela do inventário
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            inventarioAberto = !inventarioAberto;
-            telaInventarioVisual.SetActive(inventarioAberto);
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    inventarioAberto = !inventarioAberto;
+        //    telaInventarioVisual.SetActive(inventarioAberto);
+        //}
     }
 
     public void PegarNovoItem(int id)

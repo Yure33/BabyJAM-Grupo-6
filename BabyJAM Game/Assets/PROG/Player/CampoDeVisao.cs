@@ -83,7 +83,6 @@ public class CampoDeVisao : MonoBehaviour
             //DETECTAR ESTÁTUA COM OS RAYCASTS
             if(i%5 == 0)
             {
-                Debug.Log("Alterei");
                 RaycastHit2D hitEstatua;
                 hitEstatua = Physics2D.Raycast(PlayerPos.position, direcaoVetor, DistanciaFOV, LayerEnemy);
                 if(hitEstatua.collider != null && hitEstatua.transform.gameObject.CompareTag("Enemy"))
