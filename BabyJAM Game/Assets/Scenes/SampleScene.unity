@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: AstarPathfindingProject::AstarPath
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACwn+vdho6PYgIAABgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1T2zAQ/SsZnQtjE0yS3loDoQcgQ9rh4stir2NNZMmjD5LA5L93JduxSaenbN6+3X37IX8yLk2DuVV6qXnxqApk3yfM2+zbZHA+4B42Sq75B/acV17YypMgcF7AckV47MOMqtFqnv+QG+HJEYFO8lLp+q7YYKqMNQSXIAySSyvroyVBnxO2p5+LhQ85kHU189YHWYtociQzR2lRD9Se2NNalpO5gLrBwkseyHFyeTPvAhaX80CV1FDHii6vF76EEoKbThCzhyY0nEJjHLVDhIIDNRhU+H4r5JvKerHj4OeyNGg7ZRoOt1zTnNqs7Kdqh1eD2bby3kE4XyeJr4KsNunjP/6LOLhLreqHvm4c+Rq24vn2BQ45GDua7hi+/SrcyR2ILbwJfK1QPqmlVk4W5LTa+VBn8Op2+HtqLa0w3w54K/UMdM3/d+R7OIbu96ng9Vs7+hZYCxXmHS4ANS3nFwkO92G6FIR6FX8M/obN+JA6xz3XxpKr61J6eW/KaU9l92T4yefOpkpLDGinuUEJwh5WlMWeb/DMN6p65rkH/2K62p2vfwhnIQEe+FF05lqp3WlXplK7RzTVs7OCSxxEe8cTjSlVUrYHNh5JH7Z2uoR8FLZxvPh6WWx6jXOIprNoMU3K5GZxgUkyjZO4xHw+m8EMWDg9LqlPEKtWaDceWpockks6s/5DMllqaMKxFxp2S/5Rq9HIuSzVOteI8rnNcBKOmorQuyzuCk4DWqO1XIZ1s8+MCZVvschOibLQ6d3easiGLBlr+LuyHslYGr4cGfPw6ZRXGt857nzxPtmRHf8CUEsDBBQAAAgIAACwn+syyPd4bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSsUmqRaKBsbmBpbFpmqmZpW6qqamxoalhWmqyhbl5onmiUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACwn+vdho6PYgIAABgFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACwn+syyPd4bQAAAHgAAAAJACQAAAAAAAAAAAAAAK8CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAZwMAAAAA
+    dataString: UEsDBBQAAAgIAACon+vdho6PYgIAABgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1T2zAQ/SsZnQtjE0yS3loDoQcgQ9rh4stir2NNZMmjD5LA5L93JduxSaenbN6+3X37IX8yLk2DuVV6qXnxqApk3yfM2+zbZHA+4B42Sq75B/acV17YypMgcF7AckV47MOMqtFqnv+QG+HJEYFO8lLp+q7YYKqMNQSXIAySSyvroyVBnxO2p5+LhQ85kHU189YHWYtociQzR2lRD9Se2NNalpO5gLrBwkseyHFyeTPvAhaX80CV1FDHii6vF76EEoKbThCzhyY0nEJjHLVDhIIDNRhU+H4r5JvKerHj4OeyNGg7ZRoOt1zTnNqs7Kdqh1eD2bby3kE4XyeJr4KsNunjP/6LOLhLreqHvm4c+Rq24vn2BQ45GDua7hi+/SrcyR2ILbwJfK1QPqmlVk4W5LTa+VBn8Op2+HtqLa0w3w54K/UMdM3/d+R7OIbu96ng9Vs7+hZYCxXmHS4ANS3nFwkO92G6FIR6FX8M/obN+JA6xz3XxpKr61J6eW/KaU9l92T4yefOpkpLDGinuUEJwh5WlMWeb/DMN6p65rkH/2K62p2vfwhnIQEe+FF05lqp3WlXplK7RzTVs7OCSxxEe8cTjSlVUrYHNh5JH7Z2uoR8FLZxvPh6WWx6jXOIprNoMU3K5GZxgUkyjZO4xHw+m8EMWDg9LqlPEKtWaDceWpockks6s/5DMllqaMKxFxp2S/5Rq9HIuSzVOteI8rnNcBKOmorQuyzuCk4DWqO1XIZ1s8+MCZVvschOibLQ6d3easiGLBlr+LuyHslYGr4cGfPw6ZRXGt857nzxPtmRHf8CUEsDBBQAAAgIAACon+syyPd4bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSsUmqRaKBsbmBpbFpmqmZpW6qqamxoalhWmqyhbl5onmiUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACon+vdho6PYgIAABgFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACon+syyPd4bQAAAHgAAAAJACQAAAAAAAAAAAAAAK8CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAZwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -712,6 +712,50 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1067448778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1067448780}
+  - component: {fileID: 1067448779}
+  m_Layer: 0
+  m_Name: MulherSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1067448779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067448778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588cbc1e25c3382aacc8c7383808be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &1067448780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067448778}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.94949, y: 1.01582, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428572750
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   PlayerMov: {fileID: 1654522357}
   Camp: {fileID: 678348939}
+  inventarioDoJogador: {fileID: 0}
 --- !u!1 &1654522353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1401,63 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &1942665754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.190116
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.431153
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034511501032239394, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_Name
+      value: MulherDeBronze
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
 --- !u!1 &2017378821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1574,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -2781,3 +2883,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 180790331}
   - {fileID: 2017378823}
+  - {fileID: 1942665754}
+  - {fileID: 1067448780}

@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unsolved Mistery
+  m_text: Nome do Jogo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2361,6 +2361,7 @@ MonoBehaviour:
   - {fileID: 1232929272}
   - {fileID: 2049655467}
   gerenciador: {fileID: 944811227}
+  config: {fileID: 0}
 --- !u!1 &1232929270
 GameObject:
   m_ObjectHideFlags: 0

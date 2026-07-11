@@ -1,31 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
     private bool MenuActivaded;
 
-    void Start()
+    public void OpenInventory(InputAction.CallbackContext context)
     {
-        
-    }
-    void Update()
-    {
-        if (Input.GetButtonDown("Inventory") && MenuActivaded)
+        if(context.performed)
         {
-            InventoryMenu.SetActive(false);
-            MenuActivaded = false;
+            switch (MenuActivaded)
+            {
+                case false:
+                    InventoryMenu.SetActive(true);
+                    MenuActivaded = true;
+                    break;
+                case true:
+                    InventoryMenu.SetActive(false);
+                    MenuActivaded = false;
+                    break;
+            }
         }
-
-        else if (Input.GetButtonDown("Inventory") && !MenuActivaded)
-        {
-            InventoryMenu.SetActive(true);
-            MenuActivaded = true;
-    }   } 
-    
-        public void AddItem(string itemName, int quantity, Sprite itemSprite)
-    {
-        Debug.Log("itemName = " + itemName + "quantity = " + quantity + quantity + "itemSprite = " + itemSprite);
-}   }
+    }
+}

@@ -1,23 +1,32 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Inventario : MonoBehaviour
 {
     // Array simples: 0 = não tem, 1 = tem. O índice é o ID do item.
     // Coloquei tamanho 50, mas você pode mudar para o total de itens do jogo.
-    public int[] itensPossuidos = new int[50]; 
+    public int[] itensPossuidos = new int[10]; 
 
     // Arraste a tela (Canvas) do inventário para cá no Inspetor
     public GameObject telaInventarioVisual; 
     
     private bool inventarioAberto = false;
 
-    void Update()
+    public void OpenInventory(InputAction.CallbackContext context)
     {
-        // Se apertar E, liga ou desliga a tela do inventário
-        if (Input.GetKeyDown(KeyCode.R))
+        if(context.performed)
         {
-            inventarioAberto = !inventarioAberto;
-            telaInventarioVisual.SetActive(inventarioAberto);
+            switch (inventarioAberto)
+            {
+                case false:
+                    telaInventarioVisual.SetActive(true);
+                    inventarioAberto = true;
+                    break;
+                case true:
+                    telaInventarioVisual.SetActive(false);
+                    inventarioAberto = false;
+                    break;
+            }
         }
     }
 
