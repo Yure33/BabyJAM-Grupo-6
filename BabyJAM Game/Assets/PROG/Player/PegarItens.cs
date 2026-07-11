@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,8 +9,9 @@ public class PegarItens : MonoBehaviour
     [SerializeField] PlayerMovement PlayerMov;
     [SerializeField] CampoDeVisao Camp;
     
-    // Arraste o script do Inventário para cá no Inspetor
+    // Arraste o script do Inventário e da interação para cá no Inspetor
     [SerializeField] Inventario inventarioDoJogador; 
+    [SerializeField] GameObject[] interactOBJ_TXT;
 
     // Variável para lembrar qual item estamos tocando agora
     ItemInteragivel itemAtual; 
@@ -38,6 +40,10 @@ public class PegarItens : MonoBehaviour
     {
         if(parar == false)
         {
+            //MOSTRAR CAIXA DE TEXTO
+            interactOBJ_TXT[0].SetActive(true);
+            interactOBJ_TXT[1].GetComponent<TextMeshProUGUI>().text = itemAtual.textos[PassoInteraçao];
+            
             // AQUI ENTRARIA A SUA LÓGICA DE MOSTRAR O TEXTO NA TELA
             // Exemplo: MostrarCaixaDeTexto(itemAtual.textos);
 
@@ -60,6 +66,7 @@ public class PegarItens : MonoBehaviour
                 inventarioDoJogador.PegarNovoItem(itemAtual.idItem);
                 Destroy(itemAtual.gameObject);
             }
+            interactOBJ_TXT[0].SetActive(false);
             InInter = false;
         }
         PlayerMov.Interagindo = Camp.Interagindo = !parar;
