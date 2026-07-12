@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform PlayerVisual;
     bool ControllerOn = false;
     public bool Interagindo;
+    public bool NoHUD;
     float Velocidade;
     Vector2 direção;
     Vector2 lookPos;
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        if (Interagindo)
+        if (Interagindo || NoHUD)
         {
             return;
         }
@@ -44,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (Interagindo)
+        if (Interagindo || NoHUD)
         {
             return;
         }
