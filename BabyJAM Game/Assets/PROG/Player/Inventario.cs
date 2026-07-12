@@ -7,7 +7,8 @@ public class Inventario : MonoBehaviour
 {
     // Array simples: 0 = não tem, 1 = tem. O índice é o ID do item.
     public int[] itensPossuidos; 
-    [SerializeField] Color[] itenVisu;
+    [SerializeField] Sprite[] itenVisu;
+    [SerializeField] Color[] No_HaveItem;
     [SerializeField] TextMeshProUGUI textoItem;
     [SerializeField] string[] textos;
     int IndexAtual = 0;
@@ -23,9 +24,10 @@ public class Inventario : MonoBehaviour
     private bool inventarioAberto = false;
     void Start()
     {
-        itens_AntesAtuDepois[0].color = itenVisu[0];
-        itens_AntesAtuDepois[1].color = itenVisu[0];
-        itens_AntesAtuDepois[2].color = itenVisu[0];
+        itens_AntesAtuDepois[0].color = No_HaveItem[0];
+        itens_AntesAtuDepois[1].color = No_HaveItem[0];
+        itens_AntesAtuDepois[2].color = No_HaveItem[0];
+        textoItem.text = "Nenhum item destacado";
     }
     public void OpenInventory(InputAction.CallbackContext context)
     {
@@ -85,9 +87,9 @@ public class Inventario : MonoBehaviour
         }
         //DEFINIR VISUAL DOS ITENS A MOSTRA
         //VALORES PADRAO
-        itens_AntesAtuDepois[0].color = itenVisu[0];
-        itens_AntesAtuDepois[1].color = itenVisu[0];
-        itens_AntesAtuDepois[2].color = itenVisu[0];
+        itens_AntesAtuDepois[0].color = No_HaveItem[0];
+        itens_AntesAtuDepois[1].color = No_HaveItem[0];
+        itens_AntesAtuDepois[2].color = No_HaveItem[0];
         textoItem.text = "Nenhum item destacado";
 
         //VALORES MODIFICADOS
@@ -96,17 +98,20 @@ public class Inventario : MonoBehaviour
         {
             if(itensPossuidos[IndexAtual-1] == 1)
             {
-                itens_AntesAtuDepois[0].color = itenVisu[IndexAtual];
+                itens_AntesAtuDepois[0].color = No_HaveItem[1];
+                itens_AntesAtuDepois[0].sprite = itenVisu[IndexAtual-1];
             }
         }
         else if(itensPossuidos[^1] == 1)
         {
-            itens_AntesAtuDepois[0].color = itenVisu[^1];
+            itens_AntesAtuDepois[0].color = No_HaveItem[1];
+            itens_AntesAtuDepois[0].sprite = itenVisu[^1];
         }
         //ITEM ATUAL
         if(itensPossuidos[IndexAtual] == 1)
         {
-            itens_AntesAtuDepois[1].color = itenVisu[IndexAtual+1];
+            itens_AntesAtuDepois[1].color = No_HaveItem[1];
+            itens_AntesAtuDepois[1].sprite = itenVisu[IndexAtual];
             textoItem.text = textos[IndexAtual];
         }
 
@@ -115,14 +120,16 @@ public class Inventario : MonoBehaviour
         {
             if(itensPossuidos[IndexAtual+1] == 1)
             {
-                itens_AntesAtuDepois[2].color = itenVisu[IndexAtual+2];
+                itens_AntesAtuDepois[2].color = No_HaveItem[1];
+                itens_AntesAtuDepois[2].sprite = itenVisu[IndexAtual+1];
             }
         }
         else
         {
         if(itensPossuidos[0] == 1)
             {
-                itens_AntesAtuDepois[2].color = itenVisu[1];
+                itens_AntesAtuDepois[2].color = No_HaveItem[1];
+                itens_AntesAtuDepois[2].sprite = itenVisu[0];
             }
         }
     }

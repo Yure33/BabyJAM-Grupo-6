@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PegarItens : MonoBehaviour
 {
+    bool StartingScene;
+    [SerializeField] string[] startingTXT;
     bool PossoInteragir = false;
     bool InInter = false;
     [SerializeField] PlayerMovement PlayerMov;
@@ -19,6 +21,12 @@ public class PegarItens : MonoBehaviour
     //Pegar qnt de textos, vamos fazer um contador :)
     int PassoInteraçao;
 
+    void Start()
+    {
+        StartingScene = true;
+        InteraçãoInduzida(false);
+    }
+
     public void OnInteract(InputAction.CallbackContext contexto)
     {
         if(contexto.performed && PossoInteragir && !PlayerMov.NoHUD)
@@ -31,6 +39,19 @@ public class PegarItens : MonoBehaviour
             else
             {
                 Interação(true);
+                Debug.Log("Terminei interação");
+            }
+        }
+        if (contexto.performed && StartingScene)
+        {
+            if (!InInter)
+            {
+                Debug.Log("Comecei interaçao inicial");
+                InteraçãoInduzida(false);
+            }
+            else
+            {
+                InteraçãoInduzida(true);
                 Debug.Log("Terminei interação");
             }
         }
@@ -68,6 +89,36 @@ public class PegarItens : MonoBehaviour
             }
             interactOBJ_TXT[0].SetActive(false);
             InInter = false;
+        }
+        PlayerMov.Interagindo = Camp.Interagindo = !parar;
+    }
+
+    void InteraçãoInduzida(bool parar)
+    {
+        if(parar == false)
+        {
+            //MOSTRAR CAIXA DE TEXTO
+            interactOBJ_TXT[0].SetActive(true);
+            interactOBJ_TXT[1].GetComponent<TextMeshProUGUI>().text = startingTXT[PassoInteraçao];
+            
+            // AQUI ENTRARIA A SUA LÓGICA DE MOSTRAR O TEXTO NA TELA
+            // Exemplo: MostrarCaixaDeTexto(itemAtual.textos);
+
+            Debug.Log(startingTXT[PassoInteraçao]);
+            PassoInteraçao++;
+            if(PassoInteraçao == startingTXT.Length)
+            {
+                //Ja passei por todos os textos, posso encerrar interação :)
+                PassoInteraçao = 0;
+                InInter = true;
+            }
+        }
+        if(parar == true)
+        {
+            //terminou a interação
+            StartingScene = false;
+            InInter = false;
+            interactOBJ_TXT[0].SetActive(false);
         }
         PlayerMov.Interagindo = Camp.Interagindo = !parar;
     }
