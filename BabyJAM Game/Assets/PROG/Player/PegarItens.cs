@@ -21,7 +21,7 @@ public class PegarItens : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext contexto)
     {
-        if(contexto.performed && PossoInteragir)
+        if(contexto.performed && PossoInteragir && !PlayerMov.NoHUD)
         {
             if (!InInter)
             {
