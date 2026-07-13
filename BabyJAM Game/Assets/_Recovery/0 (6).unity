@@ -4583,8 +4583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PegarItens
   startingTXT:
-  - "\"Uma lenda circula pela cidade de Itajub\xE1\""
-  - '"Uma estatua de uam antiga nobre assombra as ruas por onde passa durante a noite"'
   - "Minha cabe\xE7a d\xF3i toda vez que comentam dessa hist\xF3ria..."
   - "As pessoas j\xE1 deveriam saber. Fantasmas, assombra\xE7\xF5es e esp\xEDritos
     n\xE3o existem."
