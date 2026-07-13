@@ -25,6 +25,7 @@ public class CampoDeVisao : MonoBehaviour
         mesh = new();
         GetComponent<MeshFilter>().mesh = mesh;
         GetComponent<MeshRenderer>().material.color = corDoCampo;
+        AnguloLook = 90;
     }
 
     void Update()

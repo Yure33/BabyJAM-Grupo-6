@@ -8,6 +8,9 @@ public class PegarItens : MonoBehaviour
     [SerializeField] string[] startingTXT;
     bool PossoInteragir = false;
     bool InInter = false;
+    bool Restrição;
+    [SerializeField] Transform[] RestrictsOBJ;
+    [SerializeField] Sprite CasaTutorial;
     [SerializeField] PlayerMovement PlayerMov;
     [SerializeField] CampoDeVisao Camp;
     
@@ -83,9 +86,26 @@ public class PegarItens : MonoBehaviour
             // Se o item for pegável, adiciona no inventário e se destrói
             if (itemAtual.pegavel)
             {
+                if(itemAtual.idItem >= 0)
+                {
+                    inventarioDoJogador.PegarNovoItem(itemAtual.idItem);
+                    Destroy(itemAtual.gameObject);
+                }
                 Debug.Log("Peguei");
-                inventarioDoJogador.PegarNovoItem(itemAtual.idItem);
-                Destroy(itemAtual.gameObject);
+                //ITEM -1 É PARA PEGAR UMA CHAVE
+                if(itemAtual.idItem == -1)
+                {
+                    Restrição = true;
+                    Destroy(itemAtual.gameObject);
+                }
+                else if(itemAtual.idItem == -2 && Restrição)
+                {
+                    //REMOVER COLISÃO E INTERAÇÃO
+                    Destroy(RestrictsOBJ[0].gameObject);
+                    Destroy(RestrictsOBJ[1].gameObject);
+                    //MUDAR SPRITE
+                    RestrictsOBJ[2].gameObject.GetComponent<SpriteRenderer>().sprite = CasaTutorial;
+                }
             }
             interactOBJ_TXT[0].SetActive(false);
             InInter = false;
