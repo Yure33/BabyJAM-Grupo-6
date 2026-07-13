@@ -1531,9 +1531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63e93f0a6618284ba9e7562c63f8345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Haaland
-  quantity: 1
-  sprite: {fileID: 0}
 --- !u!50 &737481135
 Rigidbody2D:
   serializedVersion: 5
@@ -2039,7 +2036,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2890d726531f0204ca1667d3b9468a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  InventoryMenu: {fileID: 1532653197}
+--- !u!1001 &1179677892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.9661338
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.69739
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034511501032239394, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_Name
+      value: MulherDeBronze (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+--- !u!1001 &1327948416
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5804900159568825384, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: enableRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960066582036909759, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960066582036909759, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9765267
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7106199
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.5051
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263128003884977905, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034511501032239394, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
+      propertyPath: m_Name
+      value: MulherDeBronze
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39c0ea2455852e74b9f0877ae79df129, type: 3}
 --- !u!1 &1422321410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,9 +2662,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76dc4bdcf3b7504584dca507275773f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PegarItens
+  startingTXT: []
   PlayerMov: {fileID: 1654522357}
   Camp: {fileID: 678348939}
   inventarioDoJogador: {fileID: 1654522359}
+  interactOBJ_TXT: []
 --- !u!1 &1654522353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,6 +2786,7 @@ MonoBehaviour:
   - 5
   PlayerVisual: {fileID: 723205089}
   Interagindo: 0
+  NoHUD: 0
 --- !u!114 &1654522358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,6 +2936,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 12f9f4d0-7709-4a62-b738-6240d190d7db
     m_ActionName: 'Player/Run[/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e29b3426-db3b-4f1c-819a-c9f06b8a9cce
+    m_ActionName: 'Player/Inventory[/Keyboard/q]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -2821,7 +2958,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventario
   itensPossuidos: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  itenVisu: []
+  No_HaveItem: []
+  textoItem: {fileID: 0}
+  textos: []
   telaInventarioVisual: {fileID: 1025600546}
+  itens_AntesAtuDepois: []
+  PlayerMov: {fileID: 0}
+  Camp: {fileID: 0}
 --- !u!1 &1669091096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4557,3 +4701,6 @@ SceneRoots:
   - {fileID: 1025600550}
   - {fileID: 1670554582}
   - {fileID: 498723144}
+  - {fileID: 737481137}
+  - {fileID: 1327948416}
+  - {fileID: 1179677892}
