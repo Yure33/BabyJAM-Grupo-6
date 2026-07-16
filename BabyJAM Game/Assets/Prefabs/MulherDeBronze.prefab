@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5804900159568825384}
   - component: {fileID: 8844301273196429254}
   - component: {fileID: 3666345707375208326}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: MulherDeBronze
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -85,12 +85,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3428260179805881836, guid: c9c7a6b19746a1743851db9b8ab36dd4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9c7a6b19746a1743851db9b8ab36dd4, type: 3}
   m_Color: {r: 0.7686275, g: 0.7686275, b: 0.7686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
