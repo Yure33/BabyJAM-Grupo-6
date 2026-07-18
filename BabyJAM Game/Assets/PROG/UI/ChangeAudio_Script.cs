@@ -11,8 +11,8 @@ public class ChangeAudio_Script : MonoBehaviour
 
     void Start()
     {
-        audios[0].value = config.audioSFX*10;
-        audios[1].value = config.audioMUSIC*10;
+        audios[0].value = 80;
+        audios[1].value = 100;
         MudeiAudio(0);
         MudeiAudio(1);
     }
@@ -22,11 +22,11 @@ public class ChangeAudio_Script : MonoBehaviour
         txt[SFX0_Music1].text = ((int)audios[SFX0_Music1].value).ToString();
         if(SFX0_Music1 == 0)
         {
-            config.audioSFX = (int)(audios[0].value/10);
+            config.audioSFX = (int)(audios[0].value);
         }
         else
         {
-            config.audioSFX = (int)(audios[0].value/10);
+            config.audioMUSIC = (int)(audios[1].value);
         }
     }
 }

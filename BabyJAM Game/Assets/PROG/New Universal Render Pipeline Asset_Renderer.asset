@@ -21,12 +21,15 @@ MonoBehaviour:
       LayerMask:
         serializedVersion: 2
         m_Bits: 128
-      PassNames: []
+      PassNames:
+      - Universal2D
+      - SRPDefaultUnlit
+      - UniversalForward
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideShader: {fileID: 0}
     overrideShaderPassIndex: 0
-    overrideMode: 1
+    overrideMode: 0
     overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 1
@@ -63,12 +66,14 @@ MonoBehaviour:
       LayerMask:
         serializedVersion: 2
         m_Bits: 64
-      PassNames: []
+      PassNames:
+      - Universal2D
+      - SRPDefaultUnlit
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideShader: {fileID: 0}
     overrideShaderPassIndex: 0
-    overrideMode: 1
+    overrideMode: 0
     overrideDepthState: 0
     depthCompareFunction: 0
     enableWrite: 0
@@ -156,18 +161,20 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: ApenasNoCampo
-    Event: 300
+    Event: 500
     filterSettings:
       RenderQueueType: 1
       LayerMask:
         serializedVersion: 2
         m_Bits: 1280
-      PassNames: []
+      PassNames:
+      - Universal2D
+      - SRPDefaultUnlit
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideShader: {fileID: 0}
     overrideShaderPassIndex: 0
-    overrideMode: 1
+    overrideMode: 0
     overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 1

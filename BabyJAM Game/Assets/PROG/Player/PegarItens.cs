@@ -4,10 +4,17 @@ using UnityEngine.InputSystem;
 
 public class PegarItens : MonoBehaviour
 {
+    bool StartingScene;
+    [SerializeField] string[] startingTXT;
     bool PossoInteragir = false;
     bool InInter = false;
+    bool Restrição;
+    [SerializeField] Transform[] RestrictsOBJ;
+    [SerializeField] Sprite CasaTutorial;
     [SerializeField] PlayerMovement PlayerMov;
     [SerializeField] CampoDeVisao Camp;
+    [SerializeField] AudioSource audioOBJ;
+    [SerializeField] AudioClip[] InteClip;
     
     // Arraste o script do Inventário e da interação para cá no Inspetor
     [SerializeField] Inventario inventarioDoJogador; 
@@ -19,6 +26,12 @@ public class PegarItens : MonoBehaviour
     //Pegar qnt de textos, vamos fazer um contador :)
     int PassoInteraçao;
 
+    void Start()
+    {
+        StartingScene = true;
+        InteraçãoInduzida(false);
+    }
+
     public void OnInteract(InputAction.CallbackContext contexto)
     {
         if(contexto.performed && PossoInteragir && !PlayerMov.NoHUD)
@@ -26,11 +39,28 @@ public class PegarItens : MonoBehaviour
             if (!InInter)
             {
                 Debug.Log("Comecei interação com o item ID: " + itemAtual.idItem);
+                audioOBJ.PlayOneShot(InteClip[0]);
                 Interação(false);
             }
             else
             {
                 Interação(true);
+                audioOBJ.PlayOneShot(InteClip[1]);
+                Debug.Log("Terminei interação");
+            }
+        }
+        if (contexto.performed && StartingScene)
+        {
+            if (!InInter)
+            {
+                Debug.Log("Comecei interaçao inicial");
+                audioOBJ.PlayOneShot(InteClip[0]);
+                InteraçãoInduzida(false);
+            }
+            else
+            {
+                InteraçãoInduzida(true);
+                audioOBJ.PlayOneShot(InteClip[1]);
                 Debug.Log("Terminei interação");
             }
         }
@@ -63,11 +93,57 @@ public class PegarItens : MonoBehaviour
             if (itemAtual.pegavel)
             {
                 Debug.Log("Peguei");
-                inventarioDoJogador.PegarNovoItem(itemAtual.idItem);
-                Destroy(itemAtual.gameObject);
+                if(itemAtual.idItem >= 0)
+                {
+                    inventarioDoJogador.PegarNovoItem(itemAtual.idItem);
+                    Destroy(itemAtual.gameObject);
+                }
+                else if(itemAtual.idItem == -1)
+                {
+                    Restrição = true;
+                    Destroy(itemAtual.gameObject);
+                }
+                else if(itemAtual.idItem == -2 && Restrição)
+                {
+                    //REMOVER COLISÃO E INTERAÇÃO
+                    Destroy(RestrictsOBJ[0].gameObject);
+                    Destroy(itemAtual.gameObject);
+                    //MUDAR SPRITE
+                    RestrictsOBJ[1].gameObject.GetComponent<SpriteRenderer>().sprite = CasaTutorial;
+                }
             }
             interactOBJ_TXT[0].SetActive(false);
             InInter = false;
+        }
+        PlayerMov.Interagindo = Camp.Interagindo = !parar;
+    }
+
+    void InteraçãoInduzida(bool parar)
+    {
+        if(parar == false)
+        {
+            //MOSTRAR CAIXA DE TEXTO
+            interactOBJ_TXT[0].SetActive(true);
+            interactOBJ_TXT[1].GetComponent<TextMeshProUGUI>().text = startingTXT[PassoInteraçao];
+            
+            // AQUI ENTRARIA A SUA LÓGICA DE MOSTRAR O TEXTO NA TELA
+            // Exemplo: MostrarCaixaDeTexto(itemAtual.textos);
+
+            Debug.Log(startingTXT[PassoInteraçao]);
+            PassoInteraçao++;
+            if(PassoInteraçao == startingTXT.Length)
+            {
+                //Ja passei por todos os textos, posso encerrar interação :)
+                PassoInteraçao = 0;
+                InInter = true;
+            }
+        }
+        if(parar == true)
+        {
+            //terminou a interação
+            StartingScene = false;
+            InInter = false;
+            interactOBJ_TXT[0].SetActive(false);
         }
         PlayerMov.Interagindo = Camp.Interagindo = !parar;
     }

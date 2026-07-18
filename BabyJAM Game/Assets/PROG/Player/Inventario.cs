@@ -2,14 +2,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Inventario : MonoBehaviour
 {
     // Array simples: 0 = não tem, 1 = tem. O índice é o ID do item.
     public int[] itensPossuidos; 
-    [SerializeField] Color[] itenVisu;
+    [SerializeField] Sprite[] itenVisu;
+    [SerializeField] Color[] No_HaveItem;
     [SerializeField] TextMeshProUGUI textoItem;
     [SerializeField] string[] textos;
+    [SerializeField] AudioSource audioOBJ;
+    [SerializeField] AudioClip[] InventorySounds;
     int IndexAtual = 0;
 
     // Arraste a tela (Canvas) do inventário para cá no Inspetor
@@ -23,9 +27,10 @@ public class Inventario : MonoBehaviour
     private bool inventarioAberto = false;
     void Start()
     {
-        itens_AntesAtuDepois[0].color = itenVisu[0];
-        itens_AntesAtuDepois[1].color = itenVisu[0];
-        itens_AntesAtuDepois[2].color = itenVisu[0];
+        itens_AntesAtuDepois[0].color = No_HaveItem[0];
+        itens_AntesAtuDepois[1].color = No_HaveItem[0];
+        itens_AntesAtuDepois[2].color = No_HaveItem[0];
+        textoItem.text = "Nenhum item destacado";
     }
     public void OpenInventory(InputAction.CallbackContext context)
     {
@@ -52,6 +57,7 @@ public class Inventario : MonoBehaviour
                     break;
             }
             PlayerMov.NoHUD = Camp.Interagindo = inventarioAberto;
+            audioOBJ.PlayOneShot(InventorySounds[0]);
         }
     }
     public void ControlInventory_Itens(InputAction.CallbackContext contexto)
@@ -60,6 +66,7 @@ public class Inventario : MonoBehaviour
         {
             Vector2 comando = contexto.ReadValue<Vector2>();
             UpdateInventory((int)comando.x);
+            audioOBJ.PlayOneShot(InventorySounds[1]);
         }
     }
 
@@ -85,9 +92,9 @@ public class Inventario : MonoBehaviour
         }
         //DEFINIR VISUAL DOS ITENS A MOSTRA
         //VALORES PADRAO
-        itens_AntesAtuDepois[0].color = itenVisu[0];
-        itens_AntesAtuDepois[1].color = itenVisu[0];
-        itens_AntesAtuDepois[2].color = itenVisu[0];
+        itens_AntesAtuDepois[0].color = No_HaveItem[0];
+        itens_AntesAtuDepois[1].color = No_HaveItem[0];
+        itens_AntesAtuDepois[2].color = No_HaveItem[0];
         textoItem.text = "Nenhum item destacado";
 
         //VALORES MODIFICADOS
@@ -96,17 +103,20 @@ public class Inventario : MonoBehaviour
         {
             if(itensPossuidos[IndexAtual-1] == 1)
             {
-                itens_AntesAtuDepois[0].color = itenVisu[IndexAtual];
+                itens_AntesAtuDepois[0].color = No_HaveItem[1];
+                itens_AntesAtuDepois[0].sprite = itenVisu[IndexAtual-1];
             }
         }
         else if(itensPossuidos[^1] == 1)
         {
-            itens_AntesAtuDepois[0].color = itenVisu[^1];
+            itens_AntesAtuDepois[0].color = No_HaveItem[1];
+            itens_AntesAtuDepois[0].sprite = itenVisu[^1];
         }
         //ITEM ATUAL
         if(itensPossuidos[IndexAtual] == 1)
         {
-            itens_AntesAtuDepois[1].color = itenVisu[IndexAtual+1];
+            itens_AntesAtuDepois[1].color = No_HaveItem[1];
+            itens_AntesAtuDepois[1].sprite = itenVisu[IndexAtual];
             textoItem.text = textos[IndexAtual];
         }
 
@@ -115,14 +125,16 @@ public class Inventario : MonoBehaviour
         {
             if(itensPossuidos[IndexAtual+1] == 1)
             {
-                itens_AntesAtuDepois[2].color = itenVisu[IndexAtual+2];
+                itens_AntesAtuDepois[2].color = No_HaveItem[1];
+                itens_AntesAtuDepois[2].sprite = itenVisu[IndexAtual+1];
             }
         }
         else
         {
         if(itensPossuidos[0] == 1)
             {
-                itens_AntesAtuDepois[2].color = itenVisu[1];
+                itens_AntesAtuDepois[2].color = No_HaveItem[1];
+                itens_AntesAtuDepois[2].sprite = itenVisu[0];
             }
         }
     }
@@ -132,5 +144,12 @@ public class Inventario : MonoBehaviour
         // Muda o índice do item para 1
         itensPossuidos[id] = 1; 
         Debug.Log("Item ID " + id + " foi guardado no inventário!");
+
+        foreach(int i in itensPossuidos){
+            if(i == 0){
+                return;
+            }
+        }
+        SceneManager.LoadScene("Escolhas");
     }
 }

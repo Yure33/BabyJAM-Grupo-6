@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D r2d;
     [SerializeField] float[] Velocidade_PadraoCorrida;
     [SerializeField] Transform PlayerVisual;
+    [SerializeField] Animator playerAnime;
     bool ControllerOn = false;
     public bool Interagindo;
     public bool NoHUD;
@@ -55,18 +56,19 @@ public class PlayerMovement : MonoBehaviour
     public void OnWalk(InputAction.CallbackContext contexto)
     {
         direção = contexto.ReadValue<Vector2>();
+        if(direção == Vector2.zero && !Interagindo && !NoHUD)
+        {
+            playerAnime.SetBool("Walking", false);
+        }
+        else if(!Interagindo && !NoHUD)
+        {
+            playerAnime.SetBool("Walking", true);
+        }
     }
 
     public void OnRun(InputAction.CallbackContext contexto)
     {
-        if (contexto.performed)
-        {
-            Velocidade = Velocidade_PadraoCorrida[1]; 
-        }
-        else
-        {
-            Velocidade = Velocidade_PadraoCorrida[0];
-        }
+        Debug.Log("Nao Corre");
     }
 
     public void OnLook(InputAction.CallbackContext contexto)
