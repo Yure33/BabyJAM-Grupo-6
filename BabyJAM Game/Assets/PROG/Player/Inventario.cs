@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Inventario : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Inventario : MonoBehaviour
     [SerializeField] Color[] No_HaveItem;
     [SerializeField] TextMeshProUGUI textoItem;
     [SerializeField] string[] textos;
+    [SerializeField] AudioSource audioOBJ;
+    [SerializeField] AudioClip[] InventorySounds;
     int IndexAtual = 0;
 
     // Arraste a tela (Canvas) do inventário para cá no Inspetor
@@ -54,6 +57,7 @@ public class Inventario : MonoBehaviour
                     break;
             }
             PlayerMov.NoHUD = Camp.Interagindo = inventarioAberto;
+            audioOBJ.PlayOneShot(InventorySounds[0]);
         }
     }
     public void ControlInventory_Itens(InputAction.CallbackContext contexto)
@@ -62,6 +66,7 @@ public class Inventario : MonoBehaviour
         {
             Vector2 comando = contexto.ReadValue<Vector2>();
             UpdateInventory((int)comando.x);
+            audioOBJ.PlayOneShot(InventorySounds[1]);
         }
     }
 
@@ -139,5 +144,12 @@ public class Inventario : MonoBehaviour
         // Muda o índice do item para 1
         itensPossuidos[id] = 1; 
         Debug.Log("Item ID " + id + " foi guardado no inventário!");
+
+        foreach(int i in itensPossuidos){
+            if(i == 0){
+                return;
+            }
+        }
+        SceneManager.LoadScene("Escolhas");
     }
 }

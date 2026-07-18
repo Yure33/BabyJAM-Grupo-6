@@ -13,6 +13,8 @@ public class PegarItens : MonoBehaviour
     [SerializeField] Sprite CasaTutorial;
     [SerializeField] PlayerMovement PlayerMov;
     [SerializeField] CampoDeVisao Camp;
+    [SerializeField] AudioSource audioOBJ;
+    [SerializeField] AudioClip[] InteClip;
     
     // Arraste o script do Inventário e da interação para cá no Inspetor
     [SerializeField] Inventario inventarioDoJogador; 
@@ -37,11 +39,13 @@ public class PegarItens : MonoBehaviour
             if (!InInter)
             {
                 Debug.Log("Comecei interação com o item ID: " + itemAtual.idItem);
+                audioOBJ.PlayOneShot(InteClip[0]);
                 Interação(false);
             }
             else
             {
                 Interação(true);
+                audioOBJ.PlayOneShot(InteClip[1]);
                 Debug.Log("Terminei interação");
             }
         }
@@ -50,11 +54,13 @@ public class PegarItens : MonoBehaviour
             if (!InInter)
             {
                 Debug.Log("Comecei interaçao inicial");
+                audioOBJ.PlayOneShot(InteClip[0]);
                 InteraçãoInduzida(false);
             }
             else
             {
                 InteraçãoInduzida(true);
+                audioOBJ.PlayOneShot(InteClip[1]);
                 Debug.Log("Terminei interação");
             }
         }
@@ -86,14 +92,13 @@ public class PegarItens : MonoBehaviour
             // Se o item for pegável, adiciona no inventário e se destrói
             if (itemAtual.pegavel)
             {
+                Debug.Log("Peguei");
                 if(itemAtual.idItem >= 0)
                 {
                     inventarioDoJogador.PegarNovoItem(itemAtual.idItem);
                     Destroy(itemAtual.gameObject);
                 }
-                Debug.Log("Peguei");
-                //ITEM -1 É PARA PEGAR UMA CHAVE
-                if(itemAtual.idItem == -1)
+                else if(itemAtual.idItem == -1)
                 {
                     Restrição = true;
                     Destroy(itemAtual.gameObject);
@@ -102,9 +107,9 @@ public class PegarItens : MonoBehaviour
                 {
                     //REMOVER COLISÃO E INTERAÇÃO
                     Destroy(RestrictsOBJ[0].gameObject);
-                    Destroy(RestrictsOBJ[1].gameObject);
+                    Destroy(itemAtual.gameObject);
                     //MUDAR SPRITE
-                    RestrictsOBJ[2].gameObject.GetComponent<SpriteRenderer>().sprite = CasaTutorial;
+                    RestrictsOBJ[1].gameObject.GetComponent<SpriteRenderer>().sprite = CasaTutorial;
                 }
             }
             interactOBJ_TXT[0].SetActive(false);

@@ -2206,6 +2206,7 @@ GameObject:
   - component: {fileID: 441079772}
   - component: {fileID: 441079771}
   - component: {fileID: 441079770}
+  - component: {fileID: 441079773}
   - component: {fileID: 441079769}
   - component: {fileID: 441079768}
   - component: {fileID: 441079767}
@@ -2250,6 +2251,10 @@ MonoBehaviour:
   - "Sairam daqui com pressa e pelo espessura da roda com certeza n\xE3o era carro
     funer\xE1rio\""
   - Parece destrancar alguma fechadura antiga
+  audioOBJ: {fileID: 1731488034}
+  InventorySounds:
+  - {fileID: 8300000, guid: 51f3f879e1a967d31bab78b01220687e, type: 3}
+  - {fileID: 8300000, guid: dbdd40a0e1413f231a8e28124f4fa4bb, type: 3}
   telaInventarioVisual: {fileID: 1904368786}
   itens_AntesAtuDepois:
   - {fileID: 115121681}
@@ -2274,6 +2279,7 @@ MonoBehaviour:
   - 3
   - 5
   PlayerVisual: {fileID: 504874965}
+  playerAnime: {fileID: 441079773}
   Interagindo: 0
   NoHUD: 0
 --- !u!114 &441079769
@@ -2538,6 +2544,28 @@ Transform:
   - {fileID: 1642882476}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &441079773
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441079766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80ab45e1438b65184a8511fbcaa54e80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &504874964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,8 +2716,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Interagir
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
+  m_sharedMaterial: {fileID: 1878716837415808027, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2900,8 +2928,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Olhar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
+  m_sharedMaterial: {fileID: 1878716837415808027, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3038,8 +3066,8 @@ MonoBehaviour:
   m_text: "\"V\xEA se pode, tem um bando de pirralhos bagun\xE7ando perto dos t\xFAmulos.
     Era pra eu mandar eles embora, mas vou sair mais cedo e fingir que nao vi eles\""
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
+  m_sharedMaterial: {fileID: 1878716837415808027, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3063,10 +3091,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 36.9
   m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3175,8 +3203,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Teste de intera\xE7\xE3o doido doido doido doido doido doiido"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
+  m_sharedMaterial: {fileID: 1878716837415808027, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3360,6 +3388,8 @@ MonoBehaviour:
   audios:
   - {fileID: 1731488034}
   - {fileID: 1516029050}
+  persistAudio: {fileID: 11400000, guid: c8a5abddf049cb9b2a0effa02477697d, type: 2}
+  OnMenu: 0
 --- !u!4 &935021659
 Transform:
   m_ObjectHideFlags: 0
@@ -4081,7 +4111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5d9529422186085eabee17b92e141ec1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4204,11 +4234,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &1364102955 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3849184415979082742, guid: c6cf7a3631279b27c8bf58ccd83c1fb9, type: 3}
-  m_PrefabInstance: {fileID: 2108914663}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1412789522
 GameObject:
   m_ObjectHideFlags: 0
@@ -4344,8 +4369,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Andar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
+  m_sharedMaterial: {fileID: 1878716837415808027, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4450,10 +4475,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: e9fc903e6b16607788bbefe94fbda024, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.5
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -4584,7 +4609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PegarItens
   startingTXT:
   - "\"Uma lenda circula pela cidade de Itajub\xE1\""
-  - '"Uma estatua de uam antiga nobre assombra as ruas por onde passa durante a noite"'
+  - '"Uma estatua de uma antiga nobre assombra as ruas por onde passa durante a noite"'
   - "Minha cabe\xE7a d\xF3i toda vez que comentam dessa hist\xF3ria..."
   - "As pessoas j\xE1 deveriam saber. Fantasmas, assombra\xE7\xF5es e esp\xEDritos
     n\xE3o existem."
@@ -4593,11 +4618,14 @@ MonoBehaviour:
     uma vez por todas que isso n\xE3o passa de uma brincadeira idiota!"
   RestrictsOBJ:
   - {fileID: 1172501035}
-  - {fileID: 1364102955}
   - {fileID: 94363316}
   CasaTutorial: {fileID: 21300000, guid: 860c149fd2b3394408358e3d945bbcca, type: 3}
   PlayerMov: {fileID: 441079768}
   Camp: {fileID: 1888863030}
+  audioOBJ: {fileID: 1731488034}
+  InteClip:
+  - {fileID: 8300000, guid: dbdd40a0e1413f231a8e28124f4fa4bb, type: 3}
+  - {fileID: 8300000, guid: 51f3f879e1a967d31bab78b01220687e, type: 3}
   inventarioDoJogador: {fileID: 441079767}
   interactOBJ_TXT:
   - {fileID: 1348105260}
@@ -4900,8 +4928,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Abrir Invent\xE1rio"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
+  m_sharedMaterial: {fileID: 1878716837415808027, guid: 4ae4e8214477c2eddb0dfbfd5d9e981e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

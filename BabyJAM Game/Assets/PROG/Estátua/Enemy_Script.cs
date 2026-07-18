@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Pathfinding;
 using System.Collections;
 [RequireComponent(typeof(AIPath))]
@@ -10,6 +11,7 @@ public class Enemy_Script : MonoBehaviour
     [SerializeField] float Velocidade;
     Transform Player;
     public bool CanWalk;
+    bool ReadyTurbo;
     float margemSprite;
 
     void Start()
@@ -26,6 +28,7 @@ public class Enemy_Script : MonoBehaviour
     {
         //ASSOCIAR VARIÁVEL DO SCRIPT COM UMA FUNCIONALIDADE DO PATHFINDER
         path.canMove = CanWalk;
+        path.maxSpeed = Velocidade;
     }
 
     IEnumerator UpdatePersonalizado()
@@ -35,9 +38,21 @@ public class Enemy_Script : MonoBehaviour
         if(posTela.x+margemSprite < 0 || posTela.x-margemSprite > Screen.width || posTela.y+margemSprite < 0
         || posTela.y-margemSprite > Screen.height)
         {
-            //SAIU DA TELA
-            Destroy(gameObject);
-            yield return 0;
+            //SAIU DA TELA 
+            int chance = Random.Range(0, 100);
+            if(!ReadyTurbo){
+                if(chance <= 10){
+                    Velocidade = 20;
+                    ReadyTurbo = true;
+                }
+                else{
+                    Velocidade = 1;
+                }
+            }   
+        }
+        else{
+            Velocidade = 5;
+            ReadyTurbo = false;
         }
         //ATUALIZA O CAMINHO QUE A IA VAI TOMAR A CADA 0.5 SEGUNDOS
         path.destination = Player.position;
@@ -46,5 +61,12 @@ public class Enemy_Script : MonoBehaviour
         yield return _waitForSeconds0_5;
         CanWalk = true;
         StartCoroutine(UpdatePersonalizado());
+    }
+
+    void OnCollisionEnter2D(Collision2D other){
+        if(other.gameObject.CompareTag("Player")){
+            Debug.Log("Te peguei jhhahahahahaha");
+            SceneManager.LoadScene(0);
+        }
     }
 }
