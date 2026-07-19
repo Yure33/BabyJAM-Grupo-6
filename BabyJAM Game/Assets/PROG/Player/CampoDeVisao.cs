@@ -24,7 +24,7 @@ public class CampoDeVisao : MonoBehaviour
         //CRIAR UMA MESH VIA CÓDIGO
         mesh = new();
         GetComponent<MeshFilter>().mesh = mesh;
-        GetComponent<MeshRenderer>().material.color = corDoCampo;
+        GetComponent<MeshRenderer>().material.color = new Color(1f, 1f, 1f, 1f);
         AnguloLook = 90;
     }
 
